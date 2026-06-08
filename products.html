@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Collection — HIPDRIPPP Handmade Jewelry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { orange:'#F4722B', teal:'#3ABFBF', gold:'#C9921A', cream:'#FDF6EE', espresso:'#1C1208', sand:'#B8956A', coral:'#E8316D', violet:'#9B5FDB' } },
+          fontFamily: { heading:['"Playfair Display"','Georgia','serif'], body:['"DM Sans"','system-ui','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --color-primary:   #F4722B;
+      --color-secondary: #3ABFBF;
+      --color-accent:    #C9921A;
+      --color-bg:        #FDF6EE;
+      --color-text:      #1C1208;
+      --color-neutral:   #B8956A;
+      --gradient-brand:  linear-gradient(135deg, #F4722B 0%, #E8316D 45%, #9B5FDB 100%);
+      --font-heading:    'Playfair Display', Georgia, serif;
+      --font-body:       'DM Sans', system-ui, sans-serif;
+      --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-out:        cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background-color: var(--color-bg); color: var(--color-text); -webkit-font-smoothing: antialiased; }
+
+    .grain::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-repeat: repeat; pointer-events: none; z-index: 1;
+    }
+
+    .logo-ring { padding: 3px; background: var(--gradient-brand); border-radius: 50%; display: inline-block; transition: box-shadow 0.3s; }
+    .logo-ring:hover { box-shadow: 0 0 28px rgba(58,191,191,0.30); }
+    .logo-ring-inner { border-radius: 50%; overflow: hidden; display: block; background: var(--color-bg); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+    }
+    nav.scrolled {
+      background: rgba(253,246,238,0.95);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 24px rgba(28,18,8,0.08);
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--color-primary); color: #fff;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9375rem;
+      padding: 0.875rem 1.75rem; border-radius: 100px; border: none;
+      cursor: pointer; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(244,114,43,0.30), 0 1px 4px rgba(244,114,43,0.15);
+      transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-out);
+    }
+    .btn-primary:hover  { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(244,114,43,0.38), 0 2px 8px rgba(244,114,43,0.18); }
+    .btn-primary:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 3px; }
+    .btn-primary:active { transform: scale(0.97) translateY(0); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      color: var(--color-text); font-family: var(--font-body); font-weight: 500; font-size: 0.9375rem;
+      text-decoration: none; border-bottom: 1.5px solid transparent; padding-bottom: 2px;
+      background: none; border-left: none; border-right: none; border-top: none;
+      cursor: pointer; transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-bottom-color: var(--color-primary); color: var(--color-primary); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--color-secondary); border-radius: 2px; }
+
+    .nav-link {
+      font-family: var(--font-body); font-weight: 500; font-size: 0.9375rem;
+      color: var(--color-text); text-decoration: none; letter-spacing: 0.01em;
+      position: relative; padding-bottom: 2px;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1.5px; background: var(--color-primary);
+      transition: width 0.25s var(--ease-out);
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:focus-visible { outline: 2px solid var(--color-secondary); border-radius: 2px; }
+    .nav-link.active { color: var(--color-primary); font-weight: 600; }
+    .nav-link.active::after { width: 100%; }
+
+    .section-label {
+      font-family: var(--font-body); font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-neutral);
+    }
+    .section-title {
+      font-family: var(--font-heading); font-weight: 700;
+      letter-spacing: -0.025em; line-height: 1.1; color: var(--color-text);
+    }
+
+    /* Product card */
+    .product-card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(28,18,8,0.07), 0 1px 4px rgba(244,114,43,0.04);
+      transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-out);
+      display: block;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(28,18,8,0.11), 0 4px 12px rgba(244,114,43,0.08), 0 0 0 1px rgba(58,191,191,0.12);
+    }
+    .product-img-wrap {
+      position: relative; overflow: hidden; aspect-ratio: 4/5; background: #f5ede3;
+    }
+    .product-img-wrap img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      transition: transform 0.55s var(--ease-out);
+    }
+    .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+    .gradient-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(28,18,8,0.45) 0%, transparent 55%);
+    }
+    .product-tag {
+      position: absolute; top: 14px; left: 14px;
+      font-family: var(--font-body); font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #fff;
+      background: rgba(28,18,8,0.55); backdrop-filter: blur(6px);
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .new-badge {
+      position: absolute; top: 14px; right: 14px;
+      font-family: var(--font-body); font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
+      background: var(--color-primary); padding: 3px 9px; border-radius: 100px;
+    }
+
+    /* Filter bar */
+    .filter-bar {
+      position: sticky; top: 72px; z-index: 50;
+      background: rgba(253,246,238,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(28,18,8,0.07);
+      padding: 0.75rem 2rem;
+    }
+    .filter-pills { display: flex; align-items: center; gap: 0.5rem; overflow-x: auto; scrollbar-width: none; }
+    .filter-pills::-webkit-scrollbar { display: none; }
+    .filter-pill {
+      font-family: var(--font-body); font-size: 0.8125rem; font-weight: 600;
+      padding: 0.4rem 1rem; border-radius: 100px; border: 1.5px solid rgba(28,18,8,0.14);
+      background: transparent; color: var(--color-text); cursor: pointer;
+      white-space: nowrap; transition: border-color 0.15s, background 0.15s, color 0.15s;
+      flex-shrink: 0;
+    }
+    .filter-pill:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .filter-pill.active { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+    .filter-pill:focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 2px; }
+    .product-count {
+      font-family: var(--font-body); font-size: 0.8125rem; font-weight: 500;
+      color: var(--color-neutral); margin-left: auto; white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* Cart CSS */
+    .cart-toggle-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--color-primary); color: #fff;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.875rem;
+      padding: 0.5rem 1.25rem; border-radius: 100px; border: none; cursor: pointer;
+      transition: transform 0.2s var(--ease-spring), box-shadow 0.2s;
+      box-shadow: 0 2px 10px rgba(244,114,43,0.25);
+    }
+    .cart-toggle-btn:hover  { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(244,114,43,0.35); }
+    .cart-toggle-btn:active { transform: scale(0.97); }
+    .cart-toggle-btn:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 2px; }
+    #cart-count-badge {
+      background: rgba(255,255,255,0.28); border-radius: 100px;
+      font-size: 0.7rem; font-weight: 700; min-width: 18px; height: 18px;
+      display: inline-flex; align-items: center; justify-content: center; padding: 0 4px;
+    }
+    .add-to-cart-btn {
+      font-family: var(--font-body); font-size: 0.8125rem; font-weight: 600;
+      background: var(--color-primary); color: #fff; border: none; border-radius: 100px;
+      padding: 0.5rem 1.125rem; cursor: pointer; white-space: nowrap;
+      transition: transform 0.2s var(--ease-spring), box-shadow 0.2s, background 0.15s;
+      box-shadow: 0 2px 10px rgba(244,114,43,0.25);
+    }
+    .add-to-cart-btn:hover  { transform: scale(1.06); box-shadow: 0 4px 16px rgba(244,114,43,0.35); }
+    .add-to-cart-btn:active { transform: scale(0.97); }
+    .add-to-cart-btn:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 2px; }
+    .add-to-cart-btn.added { background: var(--color-secondary); }
+    .cart-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(28,18,8,0.50); z-index: 200;
+      backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+    }
+    .cart-overlay.active { display: block; }
+    .cart-sidebar {
+      position: fixed; top: 0; right: 0; height: 100dvh;
+      width: min(380px, 100vw); background: var(--color-bg); z-index: 300;
+      display: flex; flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: -8px 0 40px rgba(28,18,8,0.14);
+    }
+    .cart-sidebar.open { transform: translateX(0); }
+    .cart-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(28,18,8,0.10); flex-shrink: 0;
+    }
+    .cart-body {
+      flex: 1; overflow-y: auto; padding: 1.25rem 1.5rem;
+      display: flex; flex-direction: column; gap: 0.875rem;
+    }
+    .cart-item-row {
+      display: grid; grid-template-columns: 60px 1fr auto; gap: 0.75rem;
+      align-items: start; padding: 0.875rem; background: #fff;
+      border-radius: 12px; border: 1px solid rgba(28,18,8,0.07);
+    }
+    .cart-item-img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+    .qty-row { display: flex; align-items: center; gap: 0.3rem; margin-top: 0.4rem; }
+    .qty-btn {
+      background: rgba(28,18,8,0.07); border: none; border-radius: 4px;
+      width: 26px; height: 26px; cursor: pointer; font-size: 1rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s; color: var(--color-text);
+    }
+    .qty-btn:hover { background: var(--color-primary); color: #fff; }
+    .qty-display { font-size: 0.875rem; font-weight: 700; min-width: 20px; text-align: center; }
+    .remove-item-btn {
+      background: none; border: none; font-size: 0.75rem; color: var(--color-neutral);
+      cursor: pointer; text-decoration: underline; padding: 0;
+      transition: color 0.12s; white-space: nowrap;
+    }
+    .remove-item-btn:hover { color: #c0392b; }
+    .cart-foot { padding: 1.25rem 1.5rem; border-top: 1px solid rgba(28,18,8,0.10); flex-shrink: 0; }
+
+    /* Order form */
+    .order-form-card {
+      background: #fff; border: 1px solid rgba(28,18,8,0.08); border-radius: 20px; padding: 2rem;
+    }
+    .form-field { margin-bottom: 1.25rem; }
+    .form-field label { display: block; font-family: var(--font-body); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .form-field input, .form-field textarea {
+      width: 100%; padding: 0.7rem 1rem;
+      border: 2px solid rgba(28,18,8,0.12); border-radius: 10px;
+      font-family: var(--font-body); font-size: 0.9375rem;
+      color: var(--color-text); background: var(--color-bg); outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .form-field input:focus, .form-field textarea:focus {
+      border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(244,114,43,0.12);
+    }
+    .form-field textarea { resize: vertical; }
+    .field-err { display: block; font-size: 0.8rem; color: #c0392b; margin-top: 0.3rem; min-height: 1em; }
+    .radio-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.55rem 1.25rem; border: 2px solid rgba(28,18,8,0.12); border-radius: 100px;
+      cursor: pointer; font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
+      transition: border-color 0.15s, background 0.15s; margin-right: 0.5rem;
+    }
+    .radio-pill:has(input:checked) { border-color: var(--color-primary); background: rgba(244,114,43,0.07); }
+    .radio-pill input[type="radio"] { accent-color: var(--color-primary); }
+    .summary-line {
+      display: flex; justify-content: space-between;
+      font-size: 0.9rem; padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(28,18,8,0.08); gap: 1rem;
+    }
+    .summary-line:last-child { border-bottom: none; }
+    .summary-total {
+      display: flex; justify-content: space-between;
+      font-weight: 700; font-size: 1rem;
+      margin-top: 0.5rem; padding-top: 0.5rem;
+      border-top: 2px solid rgba(28,18,8,0.10);
+    }
+    .confirm-icon {
+      width: 80px; height: 80px;
+      background: var(--color-secondary); color: #fff; border-radius: 50%;
+      font-size: 2.25rem; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem; box-shadow: 0 4px 24px rgba(58,191,191,0.35);
+    }
+
+    /* Footer */
+    footer { background: var(--color-text); }
+    .footer-link {
+      font-family: var(--font-body); font-size: 0.875rem;
+      color: rgba(253,246,238,0.55); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-link:hover { color: rgba(253,246,238,0.9); }
+    .footer-link:focus-visible { outline: 2px solid var(--color-secondary); border-radius: 2px; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 99;
+      background: var(--color-bg);
+      flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    }
+    #mobile-menu.open { display: flex; }
+    .mobile-nav-link {
+      font-family: var(--font-heading); font-size: 2rem; color: var(--color-text);
+      text-decoration: none; font-weight: 700; transition: color 0.2s;
+    }
+    .mobile-nav-link:hover { color: var(--color-primary); }
+
+    /* Fade-in */
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up-d1 { transition-delay: 0.10s; }
+    .fade-up-d2 { transition-delay: 0.20s; }
+    .fade-up-d3 { transition-delay: 0.30s; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hide-mobile { display: none !important; }
+      .show-mobile  { display: flex !important; }
+    }
+    @media (min-width: 769px) { .show-mobile { display: none !important; } }
+    @media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2,1fr) !important; } }
+    @media (max-width: 480px) { .product-grid { grid-template-columns: 1fr !important; } }
+    @media (max-width: 600px) {
+      .filter-bar { padding: 0.625rem 1rem; }
+      .page-banner-inner { padding: 6rem 1.25rem 3rem !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button id="close-menu" aria-label="Close menu"
+    style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;cursor:pointer;color:var(--color-text);padding:0.5rem;">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path d="M6 6l16 16M22 6L6 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <a href="/" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+  <a href="/#collection" class="mobile-nav-link" onclick="closeMobileMenu()">Collection</a>
+  <a href="/#story"      class="mobile-nav-link" onclick="closeMobileMenu()">Our Story</a>
+  <a href="/#findus"     class="mobile-nav-link" onclick="closeMobileMenu()">Find Us</a>
+  <button class="btn-primary" style="margin-top:1rem;border:none;cursor:pointer;font-size:0.9375rem;" onclick="closeMobileMenu(); openCart();">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    View Cart
+  </button>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav" aria-label="Main navigation">
+  <div style="max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:72px;">
+    <a href="/" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;" aria-label="HIPDRIPPP home">
+      <div class="logo-ring" style="width:44px;height:44px;">
+        <span class="logo-ring-inner" style="width:38px;height:38px;">
+          <img src="Brand_Assets/Company_logo.png" alt="HIPDRIPPP logo" style="width:38px;height:38px;display:block;object-fit:cover;" loading="eager">
+        </span>
+      </div>
+      <span style="font-family:var(--font-heading);font-weight:700;font-size:1.1875rem;color:var(--color-text);letter-spacing:0.02em;">HIPDRIPPP</span>
+    </a>
+
+    <div style="display:flex;align-items:center;gap:2rem;" class="hide-mobile">
+      <a href="/"           class="nav-link">Home</a>
+      <a href="/#collection" class="nav-link">Collection</a>
+      <a href="/#story"     class="nav-link">Our Story</a>
+      <a href="/#findus"    class="nav-link">Find Us</a>
+      <a href="products.html" class="nav-link active">All Products</a>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button id="cart-toggle" class="cart-toggle-btn hide-mobile" aria-label="Open cart">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Cart
+        <span id="cart-count-badge">0</span>
+      </button>
+      <button id="open-menu" aria-label="Open navigation menu" class="show-mobile"
+        style="background:none;border:none;cursor:pointer;color:var(--color-text);padding:0.375rem;">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M4 8h18M4 14h18M4 20h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE BANNER -->
+<section class="grain" aria-label="Products page" style="position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 85% 20%,rgba(244,114,43,0.10) 0%,transparent 65%),radial-gradient(ellipse 55% 50% at 10% 80%,rgba(155,95,219,0.08) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 40% 50%,rgba(58,191,191,0.05) 0%,transparent 65%);pointer-events:none;z-index:0;"></div>
+  <div class="page-banner-inner" style="position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:7.5rem 2rem 4.5rem;">
+
+    <!-- Breadcrumb -->
+    <div style="display:flex;align-items:center;gap:0.625rem;margin-bottom:1.25rem;">
+      <a href="/" style="font-family:var(--font-body);font-size:0.875rem;font-weight:500;color:var(--color-neutral);text-decoration:none;display:flex;align-items:center;gap:0.375rem;transition:color 0.15s;" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-neutral)'">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Home
+      </a>
+      <span style="color:rgba(28,18,8,0.25);font-size:0.875rem;">/</span>
+      <span style="font-family:var(--font-body);font-size:0.875rem;font-weight:500;color:var(--color-text);">All Products</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;">
+      <div>
+        <p class="section-label fade-up" style="margin-bottom:0.875rem;">HIPDRIPPP · Handmade · Multicultural · Festival-Forward</p>
+        <h1 class="section-title fade-up fade-up-d1" style="font-size:clamp(2.25rem,5vw,4.25rem);margin-bottom:1rem;">
+          Full Collection
+        </h1>
+        <p class="fade-up fade-up-d2" style="font-size:1.0625rem;line-height:1.75;color:#5a3d2b;max-width:560px;font-weight:300;">
+          Every piece is strung by hand — waist beads, evil eye jewelry, charm bracelets, and accessories. Add to cart, and we'll personally confirm your order.
+        </p>
+      </div>
+
+      <!-- Stats cluster (desktop) -->
+      <div class="hide-mobile fade-up fade-up-d2" style="display:flex;flex-direction:column;gap:1.25rem;align-items:flex-end;padding-bottom:0.25rem;">
+        <div style="background:#fff;border-radius:16px;padding:1.125rem 1.5rem;box-shadow:0 4px 24px rgba(28,18,8,0.08);text-align:center;">
+          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--color-primary);line-height:1;">15</div>
+          <div style="font-family:var(--font-body);font-size:0.6875rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral);margin-top:4px;">Products</div>
+        </div>
+        <div style="display:flex;gap:0.5rem;">
+          <div style="background:#fff;border-radius:12px;padding:0.875rem 1rem;box-shadow:0 2px 12px rgba(28,18,8,0.06);text-align:center;">
+            <div style="font-family:var(--font-heading);font-size:1.375rem;font-weight:700;color:var(--color-secondary);line-height:1;">4</div>
+            <div style="font-family:var(--font-body);font-size:0.625rem;letter-spacing:0.10em;text-transform:uppercase;color:var(--color-neutral);margin-top:3px;">Categories</div>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:0.875rem 1rem;box-shadow:0 2px 12px rgba(28,18,8,0.06);text-align:center;">
+            <div style="font-family:var(--font-heading);font-size:1.375rem;font-weight:700;color:var(--color-accent);line-height:1;">Hand</div>
+            <div style="font-family:var(--font-body);font-size:0.625rem;letter-spacing:0.10em;text-transform:uppercase;color:var(--color-neutral);margin-top:3px;">Made</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" role="navigation" aria-label="Filter products by category">
+  <div class="filter-pills" id="filter-pills">
+    <button class="filter-pill active" data-filter="all">All</button>
+    <button class="filter-pill" data-filter="Waist Beads">Waist Beads</button>
+    <button class="filter-pill" data-filter="Evil Eye">Evil Eye</button>
+    <button class="filter-pill" data-filter="Bracelets">Bracelets</button>
+    <button class="filter-pill" data-filter="Accessories">Accessories</button>
+    <span class="product-count" id="product-count" aria-live="polite">15 items</span>
+  </div>
+</div>
+
+<!-- PRODUCTS GRID -->
+<section id="products" aria-label="Product grid" style="padding:3.5rem 2rem 7rem;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div class="product-grid" id="productsGrid"
+      style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start;">
+    </div>
+    <p id="no-products" style="display:none;text-align:center;font-style:italic;color:var(--color-neutral);padding:5rem 0;font-size:1.0625rem;">
+      No products in this category yet — check back soon.
+    </p>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section id="order-section" aria-label="Place your order" style="display:none;padding:5rem 2rem;background:var(--color-bg);">
+  <div style="max-width:700px;margin:0 auto;">
+    <p class="section-label" style="margin-bottom:0.75rem;">Almost there</p>
+    <h2 class="section-title" style="font-size:clamp(1.875rem,4vw,2.75rem);margin-bottom:0.625rem;">Place Your Order</h2>
+    <p style="font-size:0.9375rem;color:#5a3d2b;line-height:1.7;margin-bottom:2.5rem;font-weight:300;">Fill in your details and we'll confirm your handmade order personally.</p>
+
+    <div style="background:#fff;border:1px solid rgba(28,18,8,0.08);border-radius:20px;padding:1.5rem;margin-bottom:2rem;" id="order-summary"></div>
+
+    <form id="order-form" novalidate class="order-form-card">
+      <div class="form-field">
+        <label for="cust-name">Full Name <span style="color:var(--color-primary);">*</span></label>
+        <input type="text" id="cust-name" name="name" placeholder="Jane Doe" required>
+        <span class="field-err" id="err-name"></span>
+      </div>
+      <div class="form-field">
+        <label for="cust-phone">Phone Number <span style="color:var(--color-primary);">*</span></label>
+        <input type="tel" id="cust-phone" name="phone" placeholder="(555) 000-0000" required>
+        <span class="field-err" id="err-phone"></span>
+      </div>
+      <div class="form-field">
+        <label for="cust-email">Email Address <span style="color:var(--color-primary);">*</span></label>
+        <input type="email" id="cust-email" name="email" placeholder="jane@example.com" required>
+        <span class="field-err" id="err-email"></span>
+      </div>
+      <div class="form-field">
+        <label>Fulfillment Method <span style="color:var(--color-primary);">*</span></label>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.25rem;">
+          <label class="radio-pill"><input type="radio" name="fulfillment" value="pickup" checked> Pickup</label>
+          <label class="radio-pill"><input type="radio" name="fulfillment" value="delivery"> Delivery</label>
+        </div>
+      </div>
+      <div class="form-field" id="addr-group" style="display:none;">
+        <label for="cust-addr">Delivery Address <span style="color:var(--color-primary);">*</span></label>
+        <textarea id="cust-addr" name="address" placeholder="123 Main St, City, State, ZIP" rows="3"></textarea>
+        <span class="field-err" id="err-addr"></span>
+      </div>
+      <div class="form-field">
+        <label for="cust-notes">Order Notes <span style="color:var(--color-neutral);font-weight:400;font-size:0.8rem;">(optional)</span></label>
+        <textarea id="cust-notes" name="notes" placeholder="Custom size, gift message, special requests…" rows="3"></textarea>
+      </div>
+      <p id="submit-error" style="display:none;color:#c0392b;font-size:0.875rem;background:rgba(192,57,43,0.07);border-radius:8px;padding:0.75rem 1rem;margin-bottom:0.75rem;">
+        Something went wrong sending your order. Please try again, or DM us on
+        <a href="https://instagram.com/hipdrippp" target="_blank" rel="noopener" style="color:inherit;font-weight:600;">@hipdrippp</a> to place your order directly.
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:flex-end;padding-top:1.25rem;border-top:1px solid rgba(28,18,8,0.08);">
+        <button type="button" id="back-to-cart-btn" class="btn-ghost" style="padding:0.75rem 0;">← Back to Cart</button>
+        <button type="submit" class="btn-primary">Submit Order</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- CONFIRMATION -->
+<section id="confirmation-section" aria-label="Order confirmed" style="display:none;padding:6rem 2rem;background:var(--color-bg);text-align:center;">
+  <div style="max-width:520px;margin:0 auto;">
+    <div class="confirm-icon" aria-hidden="true">✓</div>
+    <h2 class="section-title" style="font-size:clamp(1.875rem,4vw,2.75rem);margin-bottom:1rem;">Order Received!</h2>
+    <p style="font-size:1rem;color:#5a3d2b;line-height:1.75;font-weight:300;margin-bottom:0.5rem;">
+      Thank you, <strong id="conf-name"></strong>! We'll reach out to you at <strong id="conf-contact"></strong> to confirm your order details.
+    </p>
+    <p style="font-size:0.9rem;color:var(--color-neutral);margin-bottom:2.5rem;">Fulfillment: <strong id="conf-method"></strong></p>
+    <button id="shop-more-btn" class="btn-primary">← Keep Shopping</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer aria-label="Site footer" style="padding:4rem 2rem 2.5rem;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(253,246,238,0.08);">
+      <div style="max-width:300px;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <div class="logo-ring" style="padding:3px;">
+            <span class="logo-ring-inner" style="width:40px;height:40px;">
+              <img src="Brand_Assets/Company_logo.png" alt="HIPDRIPPP" style="width:40px;height:40px;display:block;object-fit:cover;" loading="lazy">
+            </span>
+          </div>
+          <span style="font-family:var(--font-heading);font-weight:700;font-size:1.125rem;color:#FDF6EE;letter-spacing:0.02em;">HIPDRIPPP</span>
+        </div>
+        <p style="font-size:0.9rem;color:rgba(253,246,238,0.50);line-height:1.7;font-weight:300;">Strung with intention. Rooted in culture. Made for the movement.</p>
+      </div>
+      <div>
+        <p style="font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,246,238,0.35);margin-bottom:1rem;">Navigate</p>
+        <div style="display:flex;flex-direction:column;gap:0.625rem;">
+          <a href="/"            class="footer-link">Home</a>
+          <a href="/#collection" class="footer-link">Collection</a>
+          <a href="products.html" class="footer-link" style="color:rgba(253,246,238,0.9);">All Products</a>
+          <a href="/#findus"    class="footer-link">Find Us</a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.6875rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,246,238,0.35);margin-bottom:1rem;">Connect</p>
+        <div style="display:flex;flex-direction:column;gap:0.625rem;">
+          <a href="https://instagram.com/hipdrippp" target="_blank" rel="noopener" class="footer-link" style="display:flex;align-items:center;gap:0.5rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @hipdrippp
+          </a>
+          <a href="https://instagram.com/hipdrippp" target="_blank" rel="noopener" class="footer-link">Custom Orders</a>
+          <a href="https://instagram.com/hipdrippp" target="_blank" rel="noopener" class="footer-link">Pop-up Schedule</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <p style="font-size:0.8125rem;color:rgba(253,246,238,0.25);">© 2026 HIPDRIPPP. All rights reserved.</p>
+      <div style="display:flex;gap:6px;align-items:center;" aria-hidden="true">
+        <span style="width:7px;height:7px;border-radius:50%;background:#F4722B;opacity:0.7;display:inline-block;"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#E8316D;opacity:0.7;display:inline-block;"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#9B5FDB;opacity:0.7;display:inline-block;"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#3ABFBF;opacity:0.7;display:inline-block;"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#C9921A;opacity:0.7;display:inline-block;"></span>
+      </div>
+      <p style="font-size:0.8125rem;color:rgba(253,246,238,0.25);">Made with love in the USA</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<!-- CART SIDEBAR -->
+<aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+  <div class="cart-head">
+    <span style="font-family:var(--font-heading);font-size:1.2rem;font-weight:700;">Your Cart</span>
+    <button id="cart-close" aria-label="Close cart"
+      style="background:none;border:none;cursor:pointer;color:var(--color-neutral);width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:background 0.12s,color 0.12s;"
+      onmouseover="this.style.background='rgba(28,18,8,0.07)';this.style.color='var(--color-text)'"
+      onmouseout="this.style.background='none';this.style.color='var(--color-neutral)'">✕</button>
+  </div>
+  <div class="cart-body" id="cart-body">
+    <p style="color:var(--color-neutral);text-align:center;margin-top:3rem;font-style:italic;">Your cart is empty.</p>
+  </div>
+  <div class="cart-foot">
+    <div style="display:flex;justify-content:space-between;font-size:1.05rem;font-weight:700;margin-bottom:1rem;">
+      <span>Total</span>
+      <span id="cart-total-display">$0.00</span>
+    </div>
+    <button id="checkout-btn" class="btn-primary" style="width:100%;justify-content:center;border:none;cursor:pointer;font-size:0.9375rem;">
+      Proceed to Order →
+    </button>
+  </div>
+</aside>
+
+<script>
+  // ════════════════════════════════════════════════════════
+  //  FORMSPREE — paste your endpoint URL here
+  //  (same form ID as in index.html)
+  // ════════════════════════════════════════════════════════
+  const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  // ════════════════════════════════════════════════════════
+  //  PRODUCT DATA — 15 products
+  //  To add a product: copy any block, give it a unique id,
+  //  update name/description/price/category/image/alt.
+  //  category must be one of: "Waist Beads" | "Evil Eye" | "Bracelets" | "Accessories"
+  // ════════════════════════════════════════════════════════
+  const PRODUCTS = [
+
+    // ── WAIST BEADS ─────────────────────────────────────────
+    {
+      id: 1,
+      name: "Turquoise &amp; Gold",
+      description: "Ocean-kissed seed beads with turquoise stone drops and gold accents.",
+      price: 38,         // ← change this number
+      category: "Waist Beads",
+      image: "Brand_Assets/products1.png",
+      alt: "Turquoise and gold seed bead waist chains",
+    },
+    {
+      id: 2,
+      name: "Fire Collection",
+      description: "Stacked in red, amber, and gold — bold like the women who wear them.",
+      price: 38,         // ← change this number
+      category: "Waist Beads",
+      image: "Brand_Assets/products2.png",
+      alt: "Red, orange, and yellow waist bead chains",
+    },
+    {
+      id: 3,
+      name: "Earth Tones",
+      description: "Grounded in brown, sage, and amber — rooted and free.",
+      price: 32,         // ← change this number
+      category: "Waist Beads",
+      image: "Brand_Assets/product3.png",
+      alt: "Earth tone seed bead waist chains",
+    },
+    {
+      id: 4,
+      name: "Green Butterfly",
+      description: "Lush greens and iridescent butterfly beads — wild and alive.",
+      price: 32,         // ← change this number
+      category: "Waist Beads",
+      image: "Brand_Assets/product4.png",
+      alt: "Green butterfly waist bead chains",
+    },
+    {
+      id: 5,
+      name: "Yin Yang Noir",
+      description: "Black and white seed beads with yin-yang charm, cowrie shell, and floral accent.",
+      price: 35,         // ← change this number
+      category: "Waist Beads",
+      image: "Brand_Assets/product5.png",
+      alt: "Black and white yin-yang waist bead chains with cowrie shell and charms",
+    },
+    {
+      id: 6,
+      name: "Violet Twilight",
+      description: "Deep purples, midnight seed beads, and a custom charm. A vibe for every season.",
+      price: 34,         // ← change this number
+      category: "Waist Beads",
+      image: "https://placehold.co/500x600/9B5FDB/FDF6EE?text=Coming+Soon",
+      alt: "Violet twilight waist beads — image coming soon",
+      isNew: true,
+    },
+
+    // ── EVIL EYE ────────────────────────────────────────────
+    {
+      id: 7,
+      name: "Evil Eye Earring Set",
+      description: "Protection that looks good on you. Handmade evil eye earring sets in multiple colorways.",
+      price: 22,         // ← change this number
+      category: "Evil Eye",
+      image: "Brand_Assets/productslaidout.png",
+      alt: "Evil eye earrings and jewelry laid out on a table",
+      imgPosition: "top center",
+    },
+    {
+      id: 8,
+      name: "Snake Eye Ring",
+      description: "A statement piece — handcrafted snake evil eye ring that draws every eye in the room.",
+      price: 18,         // ← change this number
+      category: "Evil Eye",
+      image: "Brand_Assets/customerwithproduct.png",
+      alt: "Snake evil eye ring close-up on hand",
+    },
+    {
+      id: 9,
+      name: "Evil Eye Choker",
+      description: "Minimalist evil eye charm on a delicate seed bead choker. Wearable every day.",
+      price: 26,         // ← change this number
+      category: "Evil Eye",
+      image: "https://placehold.co/500x600/3ABFBF/FDF6EE?text=Coming+Soon",
+      alt: "Evil eye choker necklace — image coming soon",
+      isNew: true,
+    },
+
+    // ── BRACELETS ────────────────────────────────────────────
+    {
+      id: 10,
+      name: "Medallion Charm Bracelets",
+      description: "Gold chain bracelets with colorful enamel medallion charms. Layer them all.",
+      price: 28,         // ← change this number
+      category: "Bracelets",
+      image: "Brand_Assets/product6.png",
+      alt: "Gold chain bracelets with colorful enamel medallion charms stacked on wrist",
+    },
+    {
+      id: 11,
+      name: "Cowrie Shell Bracelet",
+      description: "Natural cowrie shells on a stretch seed bead base. Rooted in tradition.",
+      price: 22,         // ← change this number
+      category: "Bracelets",
+      image: "https://placehold.co/500x600/C9921A/FDF6EE?text=Coming+Soon",
+      alt: "Cowrie shell bracelet — image coming soon",
+      isNew: true,
+    },
+    {
+      id: 12,
+      name: "Seed Bead Cuff",
+      description: "Bold, structured, handwoven. A cuff you'll reach for every festival season.",
+      price: 24,         // ← change this number
+      category: "Bracelets",
+      image: "https://placehold.co/500x600/F4722B/FDF6EE?text=Coming+Soon",
+      alt: "Seed bead cuff bracelet — image coming soon",
+      isNew: true,
+    },
+
+    // ── ACCESSORIES ──────────────────────────────────────────
+    {
+      id: 13,
+      name: "Floral Embroidered Clutch",
+      description: "Hand-embroidered floral clutch in bold red with vibrant folk-art detail. Festival essential.",
+      price: 45,         // ← change this number
+      category: "Accessories",
+      image: "Brand_Assets/products7.png",
+      alt: "Red hand-embroidered floral folk-art clutch bag",
+    },
+    {
+      id: 14,
+      name: "Beaded Anklet",
+      description: "Dainty layered seed bead anklet in sunset shades. Pairs with everything, removes nothing.",
+      price: 20,         // ← change this number
+      category: "Accessories",
+      image: "https://placehold.co/500x600/E8316D/FDF6EE?text=Coming+Soon",
+      alt: "Beaded anklet — image coming soon",
+      isNew: true,
+    },
+    {
+      id: 15,
+      name: "Festival Bag Charm",
+      description: "Custom beaded bag charm — add your energy to any tote or festival bag.",
+      price: 15,         // ← change this number
+      category: "Accessories",
+      image: "https://placehold.co/500x600/B8956A/FDF6EE?text=Coming+Soon",
+      alt: "Festival bag charm — image coming soon",
+      isNew: true,
+    },
+  ];
+
+  // ── State ─────────────────────────────────────────────────────
+  let cart = [];
+  let currentFilter = 'all';
+
+  // ── Filter ────────────────────────────────────────────────────
+  function getFiltered() {
+    return currentFilter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === currentFilter);
+  }
+
+  // ── Render product grid ───────────────────────────────────────
+  function renderProducts() {
+    const grid    = document.getElementById('productsGrid');
+    const noMsg   = document.getElementById('no-products');
+    const count   = document.getElementById('product-count');
+    const filtered = getFiltered();
+
+    count.textContent = filtered.length + (filtered.length === 1 ? ' item' : ' items');
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '';
+      noMsg.style.display = 'block';
+      return;
+    }
+    noMsg.style.display = 'none';
+
+    grid.innerHTML = filtered.map(p => `
+      <div class="product-card fade-up" data-product-id="${p.id}">
+        <div class="product-img-wrap">
+          <img src="${p.image}" alt="${p.alt}" loading="lazy"${p.imgPosition ? ` style="object-position:${p.imgPosition}"` : ''}>
+          <div class="gradient-overlay"></div>
+          <span class="product-tag">${p.category}</span>
+          ${p.isNew ? '<span class="new-badge">New ✦</span>' : ''}
+        </div>
+        <div style="padding:1.25rem 1.25rem 1.5rem;">
+          <h3 style="font-family:var(--font-heading);font-size:1.1875rem;font-weight:600;color:var(--color-text);margin-bottom:0.375rem;">${p.name}</h3>
+          <p style="font-family:var(--font-body);font-size:0.875rem;color:var(--color-neutral);line-height:1.5;font-weight:300;margin-bottom:1rem;">${p.description}</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;">
+            <span style="font-family:var(--font-body);font-size:1.0625rem;font-weight:700;color:var(--color-primary);">$${p.price.toFixed(2)}</span>
+            <button class="add-to-cart-btn" data-id="${p.id}" aria-label="Add ${p.name} to cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    grid.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    grid.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        addToCart(parseInt(btn.dataset.id, 10));
+        btn.classList.add('added');
+        btn.textContent = 'Added ✓';
+        setTimeout(() => { btn.classList.remove('added'); btn.textContent = 'Add to Cart'; }, 1500);
+      });
+    });
+  }
+
+  // ── Cart operations ───────────────────────────────────────────
+  function addToCart(productId) {
+    const product = PRODUCTS.find(p => p.id === productId);
+    if (!product) return;
+    const existing = cart.find(i => i.product.id === productId);
+    existing ? existing.quantity++ : cart.push({ product, quantity: 1 });
+    renderCart();
+    updateCartBadge();
+  }
+
+  function removeFromCart(productId) {
+    cart = cart.filter(i => i.product.id !== productId);
+    renderCart();
+    updateCartBadge();
+  }
+
+  function updateQty(productId, delta) {
+    const item = cart.find(i => i.product.id === productId);
+    if (!item) return;
+    item.quantity += delta;
+    if (item.quantity <= 0) removeFromCart(productId);
+    else renderCart();
+  }
+
+  function getTotal() {
+    return cart.reduce((sum, i) => sum + i.product.price * i.quantity, 0);
+  }
+
+  // ── Render cart ───────────────────────────────────────────────
+  function renderCart() {
+    const body  = document.getElementById('cart-body');
+    const total = document.getElementById('cart-total-display');
+
+    if (cart.length === 0) {
+      body.innerHTML = '<p style="color:var(--color-neutral);text-align:center;margin-top:3rem;font-style:italic;">Your cart is empty.</p>';
+    } else {
+      body.innerHTML = cart.map(item => `
+        <div class="cart-item-row">
+          <img class="cart-item-img" src="${item.product.image}" alt="${item.product.alt || item.product.name}" />
+          <div>
+            <div style="font-family:var(--font-body);font-size:0.875rem;font-weight:600;line-height:1.3;">${item.product.name}</div>
+            <div style="font-size:0.85rem;color:var(--color-primary);font-weight:600;margin-top:2px;">$${(item.product.price * item.quantity).toFixed(2)}</div>
+            <div class="qty-row">
+              <button class="qty-btn" data-id="${item.product.id}" data-delta="-1" aria-label="Decrease quantity">−</button>
+              <span class="qty-display">${item.quantity}</span>
+              <button class="qty-btn" data-id="${item.product.id}" data-delta="1" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+          <button class="remove-item-btn" data-remove="${item.product.id}">Remove</button>
+        </div>
+      `).join('');
+
+      body.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => updateQty(parseInt(btn.dataset.id, 10), parseInt(btn.dataset.delta, 10)));
+      });
+      body.querySelectorAll('.remove-item-btn').forEach(btn => {
+        btn.addEventListener('click', () => removeFromCart(parseInt(btn.dataset.remove, 10)));
+      });
+    }
+
+    total.textContent = '$' + getTotal().toFixed(2);
+  }
+
+  function updateCartBadge() {
+    const count = cart.reduce((sum, i) => sum + i.quantity, 0);
+    document.getElementById('cart-count-badge').textContent = count;
+  }
+
+  // ── Cart open/close ───────────────────────────────────────────
+  function openCart() {
+    document.getElementById('cart-sidebar').classList.add('open');
+    document.getElementById('cart-overlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCart() {
+    document.getElementById('cart-sidebar').classList.remove('open');
+    document.getElementById('cart-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // ── Order section ─────────────────────────────────────────────
+  function showOrderSection() {
+    const section = document.getElementById('order-section');
+    section.style.display = 'block';
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    const summary = document.getElementById('order-summary');
+    summary.innerHTML = cart.map(item => `
+      <div class="summary-line">
+        <span>${item.product.name} × ${item.quantity}</span>
+        <span style="font-weight:600;">$${(item.product.price * item.quantity).toFixed(2)}</span>
+      </div>
+    `).join('') + `<div class="summary-total"><span>Total</span><span>$${getTotal().toFixed(2)}</span></div>`;
+  }
+
+  document.querySelectorAll('input[name="fulfillment"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const isDelivery = document.querySelector('input[name="fulfillment"]:checked').value === 'delivery';
+      const addrGroup  = document.getElementById('addr-group');
+      addrGroup.style.display = isDelivery ? 'block' : 'none';
+      if (!isDelivery) { document.getElementById('cust-addr').value = ''; document.getElementById('err-addr').textContent = ''; }
+    });
+  });
+
+  // ── Validation ────────────────────────────────────────────────
+  function validateOrder() {
+    let ok = true;
+    const name   = document.getElementById('cust-name').value.trim();
+    const phone  = document.getElementById('cust-phone').value.trim();
+    const email  = document.getElementById('cust-email').value.trim();
+    const method = document.querySelector('input[name="fulfillment"]:checked').value;
+    const addr   = document.getElementById('cust-addr').value.trim();
+    ['err-name','err-phone','err-email','err-addr'].forEach(id => { document.getElementById(id).textContent = ''; });
+    if (!name)  { document.getElementById('err-name').textContent  = 'Please enter your full name.'; ok = false; }
+    if (!phone || !/^[\d\s\-\+\(\)\.]{7,20}$/.test(phone)) { document.getElementById('err-phone').textContent = 'Please enter a valid phone number.'; ok = false; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('err-email').textContent = 'Please enter a valid email address.'; ok = false; }
+    if (method === 'delivery' && !addr) { document.getElementById('err-addr').textContent = 'Please enter your delivery address.'; ok = false; }
+    if (!ok) { document.querySelector('.field-err:not(:empty)')?.closest('.form-field')?.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    return ok;
+  }
+
+  // ── Submit order ──────────────────────────────────────────────
+  async function submitOrder() {
+    const name   = document.getElementById('cust-name').value.trim();
+    const phone  = document.getElementById('cust-phone').value.trim();
+    const email  = document.getElementById('cust-email').value.trim();
+    const method = document.querySelector('input[name="fulfillment"]:checked').value;
+    const addr   = document.getElementById('cust-addr').value.trim();
+    const notes  = document.getElementById('cust-notes').value.trim();
+
+    const itemLines = cart.map(i =>
+      `${i.product.name} × ${i.quantity}  —  $${(i.product.price * i.quantity).toFixed(2)}`
+    ).join('\n');
+
+    const submitBtn = document.querySelector('#order-form [type="submit"]');
+    const errEl     = document.getElementById('submit-error');
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled    = true;
+    errEl.style.display   = 'none';
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject:    `New HIPDRIPPP Order — ${name}`,
+          Name:        name,
+          Phone:       phone,
+          Email:       email,
+          Fulfillment: method === 'pickup' ? 'Pickup' : `Delivery → ${addr}`,
+          Items:       itemLines,
+          'Order Total': `$${getTotal().toFixed(2)}`,
+          Notes:       notes || '—'
+        })
+      });
+      if (!res.ok) throw new Error('server error');
+
+      document.getElementById('conf-name').textContent    = name;
+      document.getElementById('conf-contact').textContent = email || phone;
+      document.getElementById('conf-method').textContent  = method === 'pickup' ? 'Pickup' : 'Delivery';
+
+      const confirmSection = document.getElementById('confirmation-section');
+      document.getElementById('order-section').style.display = 'none';
+      confirmSection.style.display = 'block';
+      confirmSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      cart = [];
+      updateCartBadge();
+      renderCart();
+      document.getElementById('order-form').reset();
+      document.getElementById('addr-group').style.display = 'none';
+
+    } catch (err) {
+      submitBtn.textContent = 'Submit Order';
+      submitBtn.disabled    = false;
+      errEl.style.display   = 'block';
+    }
+  }
+
+  // ── Button wiring ─────────────────────────────────────────────
+  document.getElementById('cart-toggle').addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  document.getElementById('cart-overlay').addEventListener('click', closeCart);
+
+  document.getElementById('checkout-btn').addEventListener('click', () => {
+    if (cart.length === 0) return;
+    closeCart();
+    showOrderSection();
+  });
+
+  document.getElementById('back-to-cart-btn').addEventListener('click', () => {
+    document.getElementById('order-section').style.display = 'none';
+    openCart();
+  });
+
+  document.getElementById('order-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (validateOrder()) await submitOrder();
+  });
+
+  document.getElementById('shop-more-btn').addEventListener('click', () => {
+    document.getElementById('confirmation-section').style.display = 'none';
+    document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // ── Filter pills ──────────────────────────────────────────────
+  document.getElementById('filter-pills').addEventListener('click', e => {
+    const pill = e.target.closest('.filter-pill');
+    if (!pill) return;
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    currentFilter = pill.dataset.filter;
+    renderProducts();
+    window.scrollTo({ top: document.getElementById('products').offsetTop - 120, behavior: 'smooth' });
+  });
+
+  // ── Nav scroll ────────────────────────────────────────────────
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Mobile menu ───────────────────────────────────────────────
+  const openBtn    = document.getElementById('open-menu');
+  const closeBtn   = document.getElementById('close-menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+  openBtn.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }
+  closeBtn.addEventListener('click', closeMobileMenu);
+
+  // ── Fade-in on scroll ─────────────────────────────────────────
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ── Init ──────────────────────────────────────────────────────
+  renderProducts();
+  renderCart();
+</script>
+</body>
+</html>
